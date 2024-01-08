@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+}
+
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.winner {
+    text-align: center;
+    font-size: xx-large;
+    padding-top: 30px;
+
+}
+
+.row {
+    display: flex;
+}
+
+.row :nth-child(2) {
+    border-left: solid 2px black;
+    border-right: solid 2px black;
+}
+
+#gameContainer> :nth-child(2) {
+    border-bottom: solid 2px black;
+    border-top: solid 2px black;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+    font-size: xx-large;
+    transition: transform .1s;
+}
+
+.cell:hover {
+    background-color: black;
+    color: white;
+    transform: scale(1.05), translate(3px);
+}
+
+#pvp:hover {
+    background-color: black;
+    color: white;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+#pvcpu:hover {
+    background-color: black;
+    color: white;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+#replay:hover {
+    background-color: black;
+    color: white;
+    transform: scale(1.05);
+    cursor: pointer;
+}
