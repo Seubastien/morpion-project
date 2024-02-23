@@ -64,18 +64,26 @@ let displayGrid = () => {
                 play(cell, i, j)
             }, { once: true })
             rowContainer.appendChild(cell)
-            cell.innerHTML = "?"
+            cell.innerHTML = ""
         });
     });
 }
 //Afficher choix joueurs
 let play = (cell, i, j) => {
+    const sword = document.createElement('img')
+    sword.src = 'assets/images/épées-removebg-preview.png'
+    sword.classList.add('swordImg','img')
+    const skull = document.createElement('img')
+    skull.src = 'assets/images/crane-removebg-preview.png'
+    skull.classList.add('skullImg','img')
+    
+
     if (!isOver) {
         if (isPlayerOne) {
-            cell.innerHTML = "X"
+            cell.appendChild(sword)
             cell.style.background = "grey"
             cell.style.color = "white"
-            grid[i][j] = cell.innerHTML
+            grid[i][j] = "X"
             victory("X")
             isPlayerOne = !isPlayerOne
             turn++
@@ -83,8 +91,8 @@ let play = (cell, i, j) => {
                 playCpu(cell)
             }
         } else {
-            cell.innerHTML = "O"
-            grid[i][j] = cell.innerHTML
+            cell.appendChild(skull)
+            grid[i][j] = "O"
             victory("O")
             isPlayerOne = !isPlayerOne
             turn++
@@ -97,7 +105,7 @@ let playCpu = (cell) => {
     console.log(turn);
     if (turn < 9) {
         let random = randomize(0, document.querySelectorAll('.cell').length - 1)
-        while (document.querySelectorAll('.cell')[random].innerHTML != "?") {
+        while (document.querySelectorAll('.cell')[random].innerHTML != "") {
             random = randomize(0, document.querySelectorAll('.cell').length - 1)
         }
         document.querySelectorAll('.cell').forEach((e) => {
